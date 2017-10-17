@@ -1,0 +1,22 @@
+<section>
+  <article>
+    <h3>Two-away data Binding</h3>
+    <div>
+      <input type="text" 
+      [value]="nome"
+      (input)="nome = $event.target.value"
+      />
+
+     <input type="text" 
+      [ngModel]="nome"
+      (ngModelChange)="nome = $event"
+     />
+     <p>Você digitou: {{nome}}</p>
+      <p>
+        <label for="">Nome: </label><input type="text" [(ngModel)]="pessoa.nome">
+        <label for="">Idade: </label><input type="text" [(ngModel)]="pessoa.idade">
+      </p>
+      <p>Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos.</p>
+    </div>
+  </article>
+</section>
