@@ -9,10 +9,12 @@ export class DataBindingComponent implements OnInit {
 
   url:string = "http://loiane.com";
   cursoAngular: boolean = true;
-  urlImagem = 'http://lorempixel.com/400/200/nature/';
+  urlImagem = 'http://lorempixel.com/200/200/nature/';
   valorAtual:string = '';
   valorSalvo:string = '';
   isMouseOver:boolean = false;
+
+  nomeCurso: string = 'Angular';
   
   getValor(){
     return 1;

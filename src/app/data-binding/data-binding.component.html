@@ -3,10 +3,12 @@
     <h3>Sessões </h3>
 
     <select #menu (change)="0">
+      <option value="0">Selecione a sessão</option>
       <option value="interpolation">Interpalation</option>
       <option value="propertybinding">Property Binding</option>
       <option value="classstyle">Class Style Binding</option>
       <option value="eventbinding">Event Binding</option>
+      <option value="twoway">Two Way</option>
     </select>
   </article>
 </section>
@@ -19,9 +21,9 @@
     <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
     <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso()}} </p>
   </article>
-  </section>
+</section>
 
-  <section [style.display]="menu.value == 'propertybinding' ? 'block' : 'none'">
+<section [style.display]="menu.value == 'propertybinding' ? 'block' : 'none'">
   <article>
     <h3>Property Binding</h3>
     <img src="{{ urlImagem }}">
@@ -66,7 +68,7 @@
 
   </article>
 </section>
-<section class="event-binding"  [style.display]="menu.value == 'eventbinding' ? 'block' : 'none'">
+<section class="event-binding" [style.display]="menu.value == 'eventbinding' ? 'block' : 'none'">
 
   <article>
     <h3>Event Binding</h3>
@@ -88,5 +90,15 @@
   </article>
 
 </section>
+<section [style.display]="menu.value == 'twoway' ? 'block' : 'none'">
+  <app-meu-form></app-meu-form>
+</section>
 
-<app-meu-form></app-meu-form>
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+
+    <app-curso [nome]="nomeCurso"></app-curso>
+
+  </article>
+</section>
