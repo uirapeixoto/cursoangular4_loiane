@@ -9,11 +9,13 @@
       <option value="classstyle">Class Style Binding</option>
       <option value="eventbinding">Event Binding</option>
       <option value="twoway">Two Way</option>
+      <option value="inputproperty">Input-Property</option>
+      <option value="outputproperty">Output-Property</option>
     </select>
   </article>
 </section>
 
-<section class="property-binding" [style.display]="menu.value == 'interpolation' ? 'block' : 'none'">
+<section [style.display]="menu.value == 'interpolation' ? 'block' : 'none'">
   <article id="interpolation">
     <h3>Interpolation/Interporlação </h3>
     <p>String renderizada com interpolação: {{ url }}</p>
@@ -22,7 +24,6 @@
     <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso()}} </p>
   </article>
 </section>
-
 <section [style.display]="menu.value == 'propertybinding' ? 'block' : 'none'">
   <article>
     <h3>Property Binding</h3>
@@ -68,7 +69,7 @@
 
   </article>
 </section>
-<section class="event-binding" [style.display]="menu.value == 'eventbinding' ? 'block' : 'none'">
+<section [style.display]="menu.value == 'eventbinding' ? 'block' : 'none'">
 
   <article>
     <h3>Event Binding</h3>
@@ -93,12 +94,15 @@
 <section [style.display]="menu.value == 'twoway' ? 'block' : 'none'">
   <app-meu-form></app-meu-form>
 </section>
-
-<section class="input-output-properties">
+<section [style.display]="menu.value == 'inputproperty' ? 'block' : 'none'">
   <article>
-    <h3>Input/Output Properties</h3>
-
-    <app-curso [nome]="nomeCurso"></app-curso>
-
+    <h3>Input Properties</h3>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+  </article>
+</section>
+<section [style.display]="menu.value == 'outputproperty' ? 'block' : 'none'">
+  <article>
+    <h3>Output Properties</h3>
+    <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
   </article>
 </section>
