@@ -1,3 +1,14 @@
 <div class="container">
-  <app-data-binding></app-data-binding>
+  <!--<app-data-binding></app-data-binding>-->
+  <app-ciclo [valorInicial]="valor" ></app-ciclo>
+
+  <p>
+    <button (click)="mudarValor()" class="btn btn-success glyphicon glyphicon-refresh"></button>
+  </p>
+
+  <p>
+    <span>A função "mudarValor()" deve estar dentro do app.component pois será ele 
+      quem vai mudar o valor da variavel que está em ciclo.compnent</span>
+  </p>
+  
 </div>
