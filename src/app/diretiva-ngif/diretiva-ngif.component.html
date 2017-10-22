@@ -14,7 +14,7 @@
 </div>
 <br>
 <br>
-<button class="btn btn-primary" (click)="onMostrarCursos($event)">Mostrar ou esconder cursos</button>
+<button class="btn btn-primary" (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
 
 <h5>Utilizando o hiden como alternativa!</h5>
 
@@ -23,14 +23,4 @@
 </div>
 <div [hidden]="mostrarCursos">
   Não existem cursos para serem listados
-</div>
-
-<h5>Removendo o * e usando o template</h5>
-
-<template [ngIf]="mostrarCursos">
-  <div>Lista de cursos aqui</div>
-</template>
-
-<div template="ngIf mostrarCursos">
-    <div>Lista de cursos aqui</div>
 </div>

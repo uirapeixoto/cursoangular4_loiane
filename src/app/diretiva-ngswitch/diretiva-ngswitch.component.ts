@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivaNgswitchComponent implements OnInit {
 
+  title: string = "NgSwith";
   aba: string = 'home';
-
+  today: number = Date.now();
   constructor() { }
 
   ngOnInit() {
