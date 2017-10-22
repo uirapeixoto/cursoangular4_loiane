@@ -40,13 +40,23 @@
         <p>{{ today | date:'medium' }}</p>
   
         <hr>
-
         
         <div class="col-md-12" [ngSwitch]="aba" >
           <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
           <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
           <p *ngSwitchDefault>Modo Home ativado</p>
-          
+        </div>
+        <h5>Removendo o * e usando template</h5>
+        <div class="col-md-12" [ngSwitch]="aba" >
+            <template [ngSwitchCase]="'mapa'">
+                <p>Modo Mapa ativado</p>
+            </template>
+            <template [ngSwitchCase]="'lista'">
+                <p>Modo Lista ativado</p>
+            </template>
+            <template [ngSwitchCase]="'Home'" ngSwitchDefault>
+                <p>Modo Home ativado</p>
+            </template>
         </div>
         
         <hr>
