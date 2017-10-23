@@ -9,3 +9,13 @@
 <p [highlight]="'red'" [defaultColor]="'grey'">
   Texto com cores customizadas.
 </p>
+<h5>Diretiva Estrutura customizada - ngElse</h5>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui
+</div>
+<div *ngElse="mostrarCursos">
+  Não existem cursos para serem listados
+</div>
+<br>
+<button class="btn btn-primary" (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
