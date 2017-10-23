@@ -1,3 +1,15 @@
 <p>
   diretiva-ngclass works!
 </p>
+<h1>
+  <i class="fa" [class.fa-star-o]="!meuFavorito" 
+  [class.fa-star]="meuFavorito" 
+  (click)="onClick()" ></i> 
+</h1>
+<h1>
+  <i class="fa" [ngClass]="{
+    'fa-star-o': !meuFavorito,
+    'fa-star': meuFavorito
+  }" 
+  (click)="onClick()" ></i> 
+</h1>
