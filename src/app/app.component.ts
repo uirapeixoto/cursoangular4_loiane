@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string = 'Curso Angular 2/4';
+  title:string = 'Angular (v2.x e v4.x)';
   aba: string = 'home';
   today: number = Date.now();
 

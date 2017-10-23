@@ -1,0 +1,26 @@
+<h5>Syles com property binding (style binding) e alterando com event binding (binding de eventos)</h5>
+
+<button class="btn"
+[style.backgroundColor]="ativo ? 'blue' : 'gray'"
+[style.color]="ativo ? 'white' : 'black'"
+[style.fontWeight]="ativo ? 'bold' : 'normal'"
+[style.fontSize]="tamanhoFonte + 'px'"
+(click)="mudarAtivo()"
+>
+Mudar atributo 'ativo'
+</button>
+<br><br>
+<input type="text" required [(ngModel)]="tamanhoFonte" />
+<hr>
+<h5>Syles com diretiva ngStyle</h5>
+
+<button class="btn"
+[ngStyle]="{
+  'backgroundColor': (ativo ? 'blue' : 'gray'), 
+  'color': (ativo ? 'white' : 'black'),
+  'fontWeight': (ativo ? 'bold' : 'normal'),
+  'fontSize': (tamanhoFonte + 'px')
+}"
+(click)="mudarAtivo()">Mudar atributo 'ativo'</button>
+<br><br>
+<input type="text" required [(ngModel)]="tamanhoFonte" />
