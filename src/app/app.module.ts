@@ -6,10 +6,12 @@ import { HttpModule } from '@angular/http';
 import { CursosModule } from './cursos/cursos.module';
 
 import { AppComponent } from './app.component';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExemplosPipesComponent
   ],
   imports: [
     BrowserModule,

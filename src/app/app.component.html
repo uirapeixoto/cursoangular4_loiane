@@ -1,31 +1,28 @@
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <a class="navbar-brand" href="#">Title</a>
+  <ul class="nav navbar-nav">
+    <li class="active">
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">Link</a>
+    </li>
+  </ul>
+</nav>
+
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="usermenu">
-        <span class="pull-left">
-          <a href="#" class="btn btn-default">
-            <span class="glyphicon glyphicon-home"></span> Home</a>
-          <a href="#" class="btn btn-default">
-            <span class="glyphicon glyphicon-folder-open"></span> Categories</a>
-          <a href="#" class="btn btn-default">
-            <span class="glyphicon glyphicon-tags"></span> Tags</a>
-          <a href="#" class="btn btn-default">
-            <span class="glyphicon glyphicon-tower"></span> Team</a>
-          <a href="#" class="btn btn-default">
-            <span class="glyphicon glyphicon-calendar"></span> Archives</a>
 
-          <div class="btn-group">
-            <button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-user"></span> Username</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            
-          </div>
-        </span>
-
+  
+  <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{title}}</h3>
       </div>
-    </div>
+      <div class="panel-body">
+        <app-exemplos-pipes></app-exemplos-pipes>
+      </div>
   </div>
-</div>
+  
 
+</div>
