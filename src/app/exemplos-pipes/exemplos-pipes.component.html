@@ -1,4 +1,4 @@
-<h5>Exemplos de PIpes</h5>
+<h5>Exemplos de Pipes</h5>
 
 <p>Título: {{livro.titulo | uppercase | lowercase | camelCase}}</p>
 <p>Estrelas: {{livro.rating | number:'1.1-1'}}</p>
@@ -8,3 +8,23 @@
 <p>Url: {{livro.url}}</p>
 <br>
 <p>Livro: {{livro | json}}</p>
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Inserir Curso</h3>
+    </div>
+    <div class="panel-body">
+      <input type="text" #novoValor> <br>
+      <button class="btn btn-primary" (click)="addCurso(novoValor.value)">Add</button>
+    </div>
+</div>
+
+
+<p>Livros:</p>
+<input type="text" required [(ngModel)]="filtro" />
+<ul>
+  <li *ngFor="let liv of livros | filtroArray:filtro">
+    {{liv}}
+  </li>
+</ul>
