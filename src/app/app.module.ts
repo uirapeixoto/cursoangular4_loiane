@@ -2,8 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { LOCALE_ID } from '@angular/core';
+
 
 import { CursosModule } from './cursos/cursos.module';
+import { SettingsService } from './settings.service';
 
 import { AppComponent } from './app.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
@@ -21,7 +24,14 @@ import { CamelCasePipe } from './camel-case.pipe';
     HttpModule,
     CursosModule
   ],
-  providers: [],
+  providers: [
+    SettingsService,
+    //{provide: LOCALE_ID, useValue: 'pt-BR'}],
+    {provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: (settingsService) => settingsService.getLocale()
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
