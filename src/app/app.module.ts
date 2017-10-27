@@ -8,16 +8,25 @@ import { CursosModule } from './cursos/cursos.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { MaterializeModule } from "angular2-materialize";
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { routing } from './app.routing';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    CursosModule
+    CursosModule,
+    MaterializeModule, 
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
