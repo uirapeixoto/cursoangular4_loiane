@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
 import { FiltroArrayPipe } from './filtro-array.pipe';
+import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExemplosPipesComponent,
     CamelCasePipe,
-    FiltroArrayPipe
+    FiltroArrayPipe,
+    FiltroArrayImpuroPipe
   ],
   imports: [
     BrowserModule,
@@ -28,11 +30,11 @@ import { FiltroArrayPipe } from './filtro-array.pipe';
   ],
   providers: [
     SettingsService,
-    //{provide: LOCALE_ID, useValue: 'pt-BR'}],
-    {provide: LOCALE_ID,
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
+    /*{provide: LOCALE_ID,
       deps: [SettingsService],
-      useFactory: (settingsService) => settingsService.getLocale()
-    }
+      useFactory: (settingsService => settingsService.getLocale())
+    }*/
   ],
   bootstrap: [AppComponent]
 })

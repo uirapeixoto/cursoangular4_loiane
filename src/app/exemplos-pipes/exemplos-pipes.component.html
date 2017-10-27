@@ -15,16 +15,36 @@
       <h3 class="panel-title">Inserir Curso</h3>
     </div>
     <div class="panel-body">
-      <input type="text" #novoValor> <br>
-      <button class="btn btn-primary" (click)="addCurso(novoValor.value)">Add</button>
+      <input type="text" #novoValor>
+      <button class="btn btn-primary btn-sm" (click)="addCurso(novoValor.value)">Add</button>
     </div>
 </div>
 
+<p>Livros:<input type="text" required [(ngModel)]="filtro" /></p>
 
-<p>Livros:</p>
-<input type="text" required [(ngModel)]="filtro" />
+<h5>Pipe Puro</h5>
+
 <ul>
   <li *ngFor="let liv of livros | filtroArray:filtro">
     {{liv}}
   </li>
 </ul>
+
+<h5>Pipe Puro Impuro</h5>
+
+<ul>
+  <li *ngFor="let liv of livros | filtroArrayImpuro:filtro">
+    {{liv}}
+  </li>
+</ul>
+
+<h5>Maneira correta de colocar filtro no array</h5>
+
+<ul>
+  <li *ngFor="let liv of obterLivros()">
+    {{liv}}
+  </li>
+</ul>
+
+<p>{{ valorAsync | async}}</p>
+<p>{{ valorAsync2 | async}}</p>
