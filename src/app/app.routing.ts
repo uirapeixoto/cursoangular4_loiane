@@ -1,3 +1,4 @@
+import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,6 +9,7 @@ import { CursosComponent } from './cursos/cursos.component';
 const APP_ROUTES: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'cursos', component: CursosComponent},
+    {path: 'curso/:id', component: CursoDetalheComponent},
     {path: '', component: HomeComponent}
 ];
 

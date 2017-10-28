@@ -4,6 +4,15 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
         <li routerLinkActive="active"><a routerLink ="/cursos">Cursos</a></li>
+        <li routerLinkActive="active"><a [routerLink] ="['curso', idCurso.value]">Cursos com id</a></li>
+        
       </ul>
     </div>
   </nav>
+
+  
+<div class="container">
+    <p>Entre com o id co curso</p>
+    <input #idCurso>
+    <a [routerLink]="['/curso', idCurso.value]"></a>
+  </div>
