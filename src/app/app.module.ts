@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { CursosModule } from './cursos/cursos.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { AppRoutingModule } from './rotas/app.routing.module';
 
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from "angular2-materialize";
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { routing } from './app.routing';
 
 import { CursosService } from './cursos/cursos.service';
 
@@ -28,7 +28,7 @@ import { CursosService } from './cursos/cursos.service';
     NavbarModule,
     CursosModule,
     MaterializeModule, 
-    routing
+    AppRoutingModule
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]

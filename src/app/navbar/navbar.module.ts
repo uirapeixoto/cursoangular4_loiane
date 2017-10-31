@@ -1,24 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NavbarComponent } from './navbar.component';
-import { routing } from './../app.routing';
+import { AppRoutingModule } from './../rotas/app.routing.module';
 
-import { CursosService } from './../cursos/cursos.service';
+import { NavbarComponent } from './navbar.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    routing
+    AppRoutingModule
   ],
   declarations: [
     NavbarComponent
   ],
   exports:[
     NavbarComponent
-  ],
-  providers:[
-    CursosService
   ]
 })
 export class NavbarModule { }
