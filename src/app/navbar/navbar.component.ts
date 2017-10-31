@@ -1,5 +1,5 @@
-import { CursosService } from './../cursos/cursos.service';
 import { Component, OnInit } from '@angular/core';
+import { CursosService } from './../cursos/cursos.service';
 
 @Component({
   selector: 'app-navbar',
