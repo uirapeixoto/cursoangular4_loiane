@@ -1,3 +1,4 @@
+import { CursosService } from './../cursos/cursos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  cursos:any;
+
+  constructor(private cursoservice: CursosService) { }
 
   ngOnInit() {
+    this.cursos = this.cursoservice.getCursos();
   }
 
 }
