@@ -5,8 +5,8 @@ Pagina: {{pagina}}
 <div class="collection" >
   <a class="collection-item" 
   *ngFor="let curso of cursos" 
-  [routerLink]="['/curso', curso.id]">{{curso.nome}}</a>
+  [routerLink]="['/cursos', curso.id]">{{curso.nome}}</a>
 </div>
 <button (click)="avancarPagina()">Avançar</button>
 
-
+<router-outlet></router-outlet>

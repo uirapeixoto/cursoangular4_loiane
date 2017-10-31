@@ -1,10 +1,10 @@
-import { AlunosModule } from './alunos/alunos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { CursosModule } from './cursos/cursos.module';
+//import { CursosModule } from './cursos/cursos.module';
+//import { AlunosModule } from './alunos/alunos.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { AppRoutingModule } from './rotas/app.routing.module';
 import { MaterializeModule } from "angular2-materialize";
@@ -27,8 +27,8 @@ import { CursosService } from './cursos/cursos.service';
     FormsModule,
     HttpModule,
     NavbarModule,
-    CursosModule,
-    AlunosModule,
+    //CursosModule,
+    //AlunosModule,
     MaterializeModule, 
     AppRoutingModule
   ],
