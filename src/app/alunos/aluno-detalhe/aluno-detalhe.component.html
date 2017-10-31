@@ -1,27 +1,23 @@
 <div class="card">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img src="" alt="" class="activator"/>
-  </div>
-  <div class="card-content">
-    <span class="card-title activator">Dados do Aluno</span>
-    <div class="row">
-        <div class="col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <div class="row">
-            <div class="waves-input-wrapper col s6">
-              <label for="icon_prefix">Id</label>
-              <input id="icon_prefix" type="text" disabled class="validate" value="{{id}}">
-            </div>
-            <div class="waves-input-wrapper col s6">
-              <label for="aluno_nome">Nome</label>
-              <input id="aluno_nome" type="text" disabled value="{{aluno?.nome}}">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img src="" alt="" class="activator"/>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator">Dados do Aluno<i class="material-icons right"  [routerLink]="['/alunos']">close</i></span>
+      <div class="row">
+          <div class="col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <div class="row">
+              <div class="waves-input-wrapper col s6">
+                <label for="icon_prefix">Id</label>
+                <input id="icon_prefix" type="text" disabled class="validate" value="{{id}}">
+              </div>
+              <div class="waves-input-wrapper col s6">
+                <label for="aluno_nome">Nome</label>
+                <input id="aluno_nome" type="text" disabled value="{{aluno?.nome}}">
+              </div>
             </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
-</div>
-
-
-
-
