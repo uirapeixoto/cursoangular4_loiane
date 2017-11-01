@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from './../cursos/cursos.service';
 
+import { AuthService } from './../login/auth.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,12 +10,14 @@ import { CursosService } from './../cursos/cursos.service';
 })
 export class NavbarComponent implements OnInit {
 
-  cursos:any;
-
-  constructor(private cursoservice: CursosService) { }
+  mostrarMenu: boolean = false;
+  
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.cursos = this.cursoservice.getCursos();
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
   }
 
 }

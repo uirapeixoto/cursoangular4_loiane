@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
-import { CursosService } from './cursos/cursos.service';
+import { AuthService } from './login/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { CursosService } from './cursos/cursos.service';
     MaterializeModule, 
     AppRoutingModule
   ],
-  providers: [CursosService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
