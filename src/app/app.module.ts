@@ -1,10 +1,9 @@
+import { CursoGuard } from './guards/cusos.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-//import { CursosModule } from './cursos/cursos.module';
-//import { AlunosModule } from './alunos/alunos.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { AppRoutingModule } from './rotas/app.routing.module';
 import { MaterializeModule } from "angular2-materialize";
@@ -16,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { AlunoGuard } from './guards/alunos.guard';
 
 @NgModule({
   declarations: [
@@ -28,12 +28,15 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule,
     HttpModule,
     NavbarModule,
-    //CursosModule,
-    //AlunosModule,
     MaterializeModule, 
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService, 
+    AuthGuard,
+    CursoGuard,
+    AlunoGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
