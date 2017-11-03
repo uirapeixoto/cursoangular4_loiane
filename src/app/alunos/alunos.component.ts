@@ -16,30 +16,11 @@ export class AlunosComponent implements OnInit {
   pagina:number;
   inscricao:Subscription;
   alunos:any;
-  constructor(private route:ActivatedRoute, 
-    private router: Router,
-    private service: AlunosService) { }
+
+  constructor( private service: AlunosService) { }
 
   ngOnInit() {
-    this.inscricao = this.route.queryParams.subscribe(
-      (currentPage:any) => {
-        this.pagina = currentPage['pagina']
-      }
-    );
-
     this.alunos = this.service.getAlunos();
-
-  }
-
-  onDestroy(){
-    this.inscricao.unsubscribe();
-  }
-
-  avancarPagina(){
-    this.router.navigate(['/alunos'],
-  {queryParams:
-    {'pagina': ++this.pagina},
-    });
   }
 
 }

@@ -16,8 +16,12 @@
           </div>
           <div class="waves-input-wrapper col s6">
             <label for="aluno_nome">Nome</label>
-            <input id="aluno_nome" type="text" disabled value="{{aluno?.nome}}">
+            <input id="aluno_nome" type="text" disabled class="validate"  value="{{aluno?.nome}}">
           </div>
+          <div class="waves-input-wrapper col s6">
+              <label for="aluno_mail">E-mail</label>
+              <input id="aluno_mail" type="text" disabled class="validate"  value="{{aluno?.email}}">
+            </div>
         </div>
       </div>
       <div class="toast-action right horizontal">
@@ -26,7 +30,5 @@
           </a>
         </div>
     </div>
-
-
   </div>
 </div>

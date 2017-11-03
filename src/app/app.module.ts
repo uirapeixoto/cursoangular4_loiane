@@ -1,3 +1,4 @@
+import { AlunosDeactivateGuard } from './guards/alunos.deactivate.guard';
 import { CursoGuard } from './guards/cusos.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -35,7 +36,8 @@ import { AlunoGuard } from './guards/alunos.guard';
     AuthService, 
     AuthGuard,
     CursoGuard,
-    AlunoGuard
+    AlunoGuard,
+    AlunosDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })
