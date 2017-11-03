@@ -4,12 +4,14 @@ import { Subscription } from 'rxjs/Rx';
 import { AlunosService } from './../alunos.service';
 import { ActivatedRoute } from '@angular/router';
 
+import { IFormCanDeactivate } from './../../guards/IForm-camdeactivate';
+
 @Component({
   selector: 'app-aluno-form',
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.css']
 })
-export class AlunoFormComponent implements OnInit {
+export class AlunoFormComponent implements OnInit, IFormCanDeactivate {
 
   aluno: any = {};
   inscricao: Subscription;
