@@ -1,32 +1,23 @@
 <nav class="navbar navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar">1</span>
-      <span class="icon-bar">2</span>
-      <span class="icon-bar">3</span>
-    </button>
-    <a class="navbar-brand">Angular v2 e v4</a>
+        <a class="navbar-brand">Angular Forms</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
+      <li routerLinkActive="active"><a routerLink="/templateForm">Form - Template Driven</a></li>
+      <li routerLinkActive="active"><a routerLink="/dataForm">Form - Data Driven</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="#">Link</a>
-      </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-          <b class="caret"></b>
+        <a href="#" class="dropdown-toggle glyphicon glyphicon-th-list"
+         data-toggle="dropdown"> Menu <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="#">Action</a>
+            <a class="glyphicon glyphicon-log-in" href="#"> Login</a>
           </li>
           <li>
             <a href="#">Another action</a>
