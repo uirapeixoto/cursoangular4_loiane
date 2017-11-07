@@ -42,4 +42,7 @@
   <button type="submit" 
   class="btn" [class.btn-default]="!f.valid" [class.btn-primary]="f.valid"
   [disabled]="!f.valid">Submit</button>
+
+  <app-form-debug [form]="f"></app-form-debug>
+
 </form>
