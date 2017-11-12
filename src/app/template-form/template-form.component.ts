@@ -29,23 +29,56 @@ export class TemplateFormComponent implements OnInit {
   }
 
   aplicaCssErro(campo) {
-    return {'has-error': this.verificaValidTouched(campo),
-     'has-feedback':this.verificaValidTouched(campo)
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
     }
   }
 
-  consultaCEP(cep){
+  consultaCEP(cep, form) {
     //Nova variável "cep" somente com dígitos.
     var cep = cep.replace(/\D/g, '');
-    var validacep =  /^[0-9]{8}$/;
+    var validacep = /^[0-9]{8}$/;
     if (cep != "") {
-      if(validacep.test(cep)) {
+      if (validacep.test(cep)) {
+
+        this.resetarDadosForm(form);
+
         this.http.get(`//viacep.com.br/ws/${cep}/json`)
-        .map(dados => dados.json())
-        .subscribe(dados =>  console.log(dados));
+          .map(dados => dados.json())
+          .subscribe(dados => this.popularDados(dados, form));
 
       }
     }
+  }
+
+  popularDados(dados, formulario) {
+    /* formulario.setValue({
+      nome: null,
+      email: null
+    }); */
+    formulario.form.patchValue({
+      endereco: {
+        cep: dados.cep,
+        complemento: dados.complemento,
+        rua: dados.logradouro,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf
+      }
+    });
+  }
+
+  resetarDadosForm(formulario){
+    formulario.form.patchValue({
+      endereco: {
+        complemento: null,
+        rua: null,
+        bairro: null,
+        cidade: null,
+        estado: null
+      }
+    });
   }
 
 }

@@ -18,11 +18,11 @@
       <app-campo-control-error [mostrarErro]="verificaValidTouched(email)" msgErro="E-mail é obrigatório"></app-campo-control-error>
     </div>
   </div>
-  <div ngModelGroup="Endereco">
+  <div ngModelGroup="endereco">
     <div class="form-group">
       <div class="col-md-3" [ngClass]="aplicaCssErro(cep)">
         <label for="cep" class="control-label" >CEP</label>
-        <input type="text" class="form-control" id="cep" name="cep"  (blur)="consultaCEP($event.target.value)" ngModel required #cep="ngModel" />
+        <input type="text" class="form-control" id="cep" name="cep"  (blur)="consultaCEP($event.target.value, f)" ngModel required #cep="ngModel" />
         <app-campo-control-error [mostrarErro]="verificaValidTouched(cep)" msgErro="CEP é obrigatório"></app-campo-control-error>
       </div>
       <div class="col-md-3" [ngClass]="aplicaCssErro(numero)">
