@@ -12,7 +12,7 @@ export class DataFormComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private http: Http
   ) { }
 
@@ -23,16 +23,26 @@ export class DataFormComponent implements OnInit {
     }); */
 
     this.formulario = this.formBuilder.group({
-      nome:[null],
-      email:[null],
+      nome: [null],
+      email: [null],
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.formulario);
     this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
-    .map(res => res)
-    .subscribe(dados => console.log(dados));
+      .map(res => res)
+      .subscribe(dados => {
+        console.log(dados);
+        //this.formulario.reset();
+        this.resetar();
+      },
+      (error: any) => alert('erro')
+      );
+  }
+
+  resetar(){
+    this.formulario.reset();
   }
 
 }
