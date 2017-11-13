@@ -1,4 +1,22 @@
-<p>
-  data-form works!
-</p>
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="nome" class="control-label">Nome</label>
+    </div>
+    <div class="col-sm-12">
+      <input type="nome" class="form-control" placeholder="Nome" id="nome" formControlName="nome">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="email" class="control-label">E-mail</label>
+    </div>
+    <div class="col-sm-12">
+      <input type="text" class="form-control" placeholder="nome@email.com.br" required email id="email" formControlName="email" />
+    </div>
+  </div>
+  <button type="submit" class="btn" >Submit</button>
 
+  <app-form-debug [form]="formulario"></app-form-debug>
+
+</form>
