@@ -17,13 +17,13 @@ export class DataFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-/*      this.formulario = new FormGroup({
-      nome: new FormControl(null),
-      email: new FormControl(null),
-      endereco: new FormGroup({
-        cep: new FormControl(null)
-      })
-    }); */ 
+    /*      this.formulario = new FormGroup({
+          nome: new FormControl(null),
+          email: new FormControl(null),
+          endereco: new FormGroup({
+            cep: new FormControl(null)
+          })
+        }); */
 
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
@@ -41,17 +41,35 @@ export class DataFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formulario);
-    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
-      .map(res => res)
-      .subscribe(dados => {
-        console.log(dados);
-        //reseta o form
-        //this.formulario.reset();
-        //this.resetar();
-      },
-      (error: any) => alert('erro')
-      );
+    //console.log(this.formulario);
+
+    if (this.formulario.valid) {
+      this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+        .map(res => res)
+        .subscribe(dados => {
+          console.log(dados);
+          //reseta o form
+          //this.formulario.reset();
+          //this.resetar();
+        },
+        (error: any) => alert('erro')
+        );
+    } else {
+      //console.log('formulario inválido');
+        this.verificaValidacoesForm(this.formulario);
+    
+    }
+  }
+
+  verificaValidacoesForm(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(campo => {
+      console.log(campo);
+      const controle = formGroup.get(campo);
+      controle.markAsDirty();
+      if (controle instanceof FormGroup) {
+        this.verificaValidacoesForm(controle);
+      }
+    });
   }
 
   resetar() {
@@ -66,18 +84,18 @@ export class DataFormComponent implements OnInit {
   }
 
   verificaValidTouched(campo: string) {
-    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
+    return !this.formulario.get(campo).valid && (this.formulario.get(campo).touched || this.formulario.get(campo).dirty);
   }
 
   verificaEmailInvalido() {
     let campoEmail = this.formulario.get('email');
     if (campoEmail.errors)
-      return campoEmail.errors['email'] && campoEmail.touched;
+      return campoEmail.errors['email'] && (campoEmail.touched || campoEmail.dirty);
   }
 
   consultaCEP() {
     let cep = this.formulario.get('endereco.cep').value;
-    
+
     //Nova variável "cep" somente com dígitos.
     cep = cep.replace(/\D/g, '');
     var validacep = /^[0-9]{8}$/;
@@ -94,8 +112,9 @@ export class DataFormComponent implements OnInit {
     }
   }
 
+
   popularDados(dados) {
-   this.formulario.patchValue({
+    this.formulario.patchValue({
       endereco: {
         cep: dados.cep,
         complemento: dados.complemento,
@@ -109,7 +128,7 @@ export class DataFormComponent implements OnInit {
     //this.formulario.get('nome').setValue('Fulano de tal');
   }
 
-  resetarDadosForm(){
+  resetarDadosForm() {
     this.formulario.patchValue({
       endereco: {
         complemento: null,
