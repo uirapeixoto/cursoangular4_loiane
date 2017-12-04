@@ -1,3 +1,4 @@
+import { SidebarModule } from './components/sidebar/sidebar.module';
 import { AppRoutingModule } from './rotas/app.routing.module';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
@@ -28,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     HttpModule,
     NavbarModule,
+    SidebarModule,
     MaterializeModule,
     AppRoutingModule
   ],

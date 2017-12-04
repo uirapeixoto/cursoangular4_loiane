@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs/Rx';
 
-import { AlunosService } from './alunos.service';
-
 @Component({
   selector: 'app-alunos',
   templateUrl: './alunos.component.html',
@@ -12,15 +10,14 @@ import { AlunosService } from './alunos.service';
 })
 export class AlunosComponent implements OnInit {
 
-  id:number;
-  pagina:number;
-  inscricao:Subscription;
-  alunos:any;
+  id: number;
+  pagina: number;
+  inscricao: Subscription;
+  alunos: any;
 
-  constructor( private service: AlunosService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.alunos = this.service.getAlunos();
   }
 
 }
