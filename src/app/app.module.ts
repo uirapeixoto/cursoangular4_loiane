@@ -1,46 +1,37 @@
-import { AlunosDeactivateGuard } from './guards/alunos.deactivate.guard';
-import { CursoGuard } from './guards/cusos.guard';
+import { AppRoutingModule } from './rotas/app.routing.module';
+import { LoginComponent } from './login/login.component';
+import { CursosComponent } from './cursos/cursos.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { NavbarModule } from './navbar/navbar.module';
-import { AppRoutingModule } from './rotas/app.routing.module';
-import { MaterializeModule } from "angular2-materialize";
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-
+import { AlunosComponent } from './alunos/alunos.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-
 import { AuthService } from './login/auth.service';
-import { AuthGuard } from './guards/auth.guard';
-import { AlunoGuard } from './guards/alunos.guard';
-import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlunosComponent,
+    CursosComponent,
     HomeComponent,
-    LoginComponent,
-    PaginaNaoEncontradaComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NavbarModule,
-    MaterializeModule, 
+    MaterializeModule,
     AppRoutingModule
   ],
-  providers: [
-    AuthService, 
-    AuthGuard,
-    CursoGuard,
-    AlunoGuard,
-    AlunosDeactivateGuard
-  ],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

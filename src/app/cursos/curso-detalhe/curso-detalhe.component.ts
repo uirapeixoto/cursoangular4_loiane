@@ -16,7 +16,7 @@ export class CursoDetalheComponent implements OnInit {
   curso: any;
 
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private cursoService: CursosService,
     private router: Router) {
     /*     console.log("saida:\n");

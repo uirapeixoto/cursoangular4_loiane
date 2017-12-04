@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CursosRoutingModule } from './cursos.routing.module';
-
 import { CursosComponent } from './cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursosService } from './cursos.service';
@@ -10,17 +8,16 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
 
 @NgModule({
   imports: [
-    CommonModule, 
-    CursosRoutingModule
+    CommonModule
   ],
   declarations: [
     CursosComponent,
     CursoDetalheComponent,
     CursoNaoEncontradoComponent
-  ], 
-  exports:[
+  ],
+  exports: [
     CursosComponent
   ],
-  providers:[CursosService]
+  providers: [CursosService]
 })
 export class CursosModule { }

@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private service: AuthService) { }
 
-  fazerLogin(){
-    //console.log(this.usuario);
+  fazerLogin() {
+    // console.log(this.usuario);
     this.service.fazerLogin(this.usuario);
   }
 

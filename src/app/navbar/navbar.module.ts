@@ -13,7 +13,7 @@ import { NavbarComponent } from './navbar.component';
   declarations: [
     NavbarComponent
   ],
-  exports:[
+  exports: [
     NavbarComponent
   ]
 })
