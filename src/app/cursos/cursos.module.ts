@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CursosComponent } from './cursos.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursosService } from './cursos.service';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
@@ -12,11 +11,10 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
   ],
   declarations: [
     CursosComponent,
-    CursoDetalheComponent,
     CursoNaoEncontradoComponent
   ],
   exports: [
-    CursosComponent
+    CursosComponent,
   ],
   providers: [CursosService]
 })

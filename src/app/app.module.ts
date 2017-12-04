@@ -15,6 +15,7 @@ import { AlunosComponent } from './alunos/alunos.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './login/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AlunosComponent,
     CursosComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CursoDetalheComponent
   ],
   imports: [
     BrowserModule,
