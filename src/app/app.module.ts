@@ -15,16 +15,15 @@ import { AlunosComponent } from './alunos/alunos.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './login/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { AdminModule } from './admin/admin.module';
+import { CursosModule } from './cursos/cursos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlunosComponent,
-    CursosComponent,
     HomeComponent,
-    LoginComponent,
-    CursoDetalheComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +32,8 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     NavbarModule,
     SidebarModule,
     MaterializeModule,
+    AdminModule,
+    CursosModule,
     AppRoutingModule
   ],
   providers: [AuthService],

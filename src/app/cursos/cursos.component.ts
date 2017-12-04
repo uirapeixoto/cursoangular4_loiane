@@ -1,6 +1,7 @@
 import { Subscription } from 'rxjs/Rx';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CursosService } from './cursos.service';
 
 @Component({
   selector: 'app-cursos',
@@ -14,7 +15,8 @@ export class CursosComponent implements OnInit {
   proximaPagina: number;
   inscricao: Subscription;
 
-  constructor() { }
+  constructor(private cursoService: CursosService) { }
   ngOnInit() {
+    this.cursos = this.cursoService.getCursos();
   }
 }

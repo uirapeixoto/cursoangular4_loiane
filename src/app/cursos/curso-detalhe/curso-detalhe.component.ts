@@ -10,7 +10,6 @@ import { CursosService } from './../cursos.service';
   styleUrls: ['./curso-detalhe.component.css']
 })
 export class CursoDetalheComponent implements OnInit {
-
   id: number;
   inscricao: Subscription;
   curso: any;
@@ -18,27 +17,24 @@ export class CursoDetalheComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private cursoService: CursosService,
-    private router: Router) {
+    private router: Router
+  ) {
     /*     console.log("saida:\n");
         console.log(this.route.snapshot.params);
         this.id = this.route.snapshot.params['curso.id']; */
-
   }
 
   ngOnInit() {
-    this.inscricao = this.route.params.subscribe(
-      (params: any) => {
-        this.id = params['id'];
-        this.curso = this.cursoService.getCurso(this.id);
-
-        if(this.curso == null)
-          this.router.navigate(['/cursos/naoEncontrado']);
+    this.inscricao = this.route.params.subscribe((params: any) => {
+      this.id = params['id'];
+      this.curso = this.cursoService.getCurso(this.id);
+      if (this.curso == null) {
+        this.router.navigate(['/curso/naoEncontrado']);
       }
-    )
+    });
   }
 
   ngOnDestroy() {
     this.inscricao.unsubscribe;
   }
-
 }
