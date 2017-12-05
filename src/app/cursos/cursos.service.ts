@@ -12,7 +12,6 @@ export class CursosService {
   }
 
   getCurso(id: number) {
-    console.log('curso service id:' + id);
     let cursos = this.getCursos();
     for (let i = 0; i < cursos.length; i++) {
       let curso = cursos[i];
