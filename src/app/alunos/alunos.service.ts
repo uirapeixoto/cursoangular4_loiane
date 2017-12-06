@@ -22,9 +22,10 @@ export class AlunosService {
     for (let i = 0; i < this.alunos.length; i++) {
       let aluno = alunos[i];
 
-      if (aluno.id == id)
-        return aluno
+      if (aluno.id == id) {
+        return aluno;
+      }
     }
-    return null
+    return null;
   }
 }

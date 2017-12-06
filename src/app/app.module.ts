@@ -11,17 +11,14 @@ import { NavbarModule } from './navbar/navbar.module';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-import { AlunosComponent } from './alunos/alunos.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './login/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminModule } from './admin/admin.module';
-import { CursosModule } from './cursos/cursos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlunosComponent,
     HomeComponent,
     LoginComponent
   ],
@@ -33,7 +30,6 @@ import { CursosModule } from './cursos/cursos.module';
     SidebarModule,
     MaterializeModule,
     AdminModule,
-    CursosModule,
     AppRoutingModule
   ],
   providers: [AuthService],

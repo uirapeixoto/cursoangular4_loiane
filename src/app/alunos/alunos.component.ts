@@ -1,7 +1,9 @@
+import { AlunosService } from './alunos.service';
 import { Router, Routes, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs/Rx';
+import { RouterModule } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-alunos',
@@ -15,9 +17,10 @@ export class AlunosComponent implements OnInit {
   inscricao: Subscription;
   alunos: any;
 
-  constructor() { }
+  constructor(private alunosService: AlunosService) { }
 
   ngOnInit() {
+    this.alunos = this.alunosService.getAlunos();
   }
 
 }

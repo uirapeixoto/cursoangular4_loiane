@@ -9,8 +9,9 @@ import { AlunosComponent } from '../alunos/alunos.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'alunos', component: AlunosComponent },
   { path: 'admin', component: PanelComponent },
+  { path: 'cursos', loadChildren: 'app/cursos/cursos.module#CursosModule' },
+  { path: 'alunos', loadChildren: 'app/alunos/alunos.module#AlunosModule' },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 

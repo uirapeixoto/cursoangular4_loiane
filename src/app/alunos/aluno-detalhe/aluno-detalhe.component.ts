@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs/Rx';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AlunosService } from './../alunos.service';
 import { Aluno } from './../Aluno';
+import { Params } from '@angular/router/src/shared';
 
 @Component({
   selector: 'app-aluno-detalhe',
@@ -12,25 +13,36 @@ import { Aluno } from './../Aluno';
   styleUrls: ['./aluno-detalhe.component.css']
 })
 
-export class AlunoDetalheComponent implements OnInit {
+export class AlunoDetalheComponent implements OnInit, OnDestroy {
+
+
   id: number;
   inscricao: Subscription;
   aluno: Aluno;
+
   constructor
-  (private route: ActivatedRoute,
+  (
+    private alunoService: AlunosService,
+    private route: ActivatedRoute,
     private service: AlunosService,
     private router: Router) { }
 
   ngOnInit() {
     console.log('ngOnInit: AlunoDestalheComponent');
 
-    this.inscricao = this.route.data.subscribe(
-      (info: {aluno: Aluno}) => {
-        console.log('Recbendo o obj Aluno do resolver');
-        this.aluno = info.aluno;
-      }
-    );
+    this.inscricao = this.route.params.subscribe((params: any) => {
+      this.id = params['id'];
+      this.aluno = this.alunoService.getAluno(this.id);
+    });
 
+  }
+
+  editar() {
+    this.router.navigate(['/alunos', this.aluno.id, 'editar']);
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
   }
 
 }

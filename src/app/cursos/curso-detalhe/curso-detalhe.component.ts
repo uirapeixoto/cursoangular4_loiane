@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
@@ -9,7 +9,7 @@ import { CursosService } from './../cursos.service';
   templateUrl: './curso-detalhe.component.html',
   styleUrls: ['./curso-detalhe.component.css']
 })
-export class CursoDetalheComponent implements OnInit {
+export class CursoDetalheComponent implements OnInit, OnDestroy {
   id: number;
   inscricao: Subscription;
   curso: any;
@@ -35,6 +35,6 @@ export class CursoDetalheComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.inscricao.unsubscribe;
+    this.inscricao.unsubscribe();
   }
 }
